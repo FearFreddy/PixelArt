@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
+  <title>Pixel Beauty</title>
+</head>
+<body id="body">
+	<div id="main">
+    <div class="info">
+      <h1>
+      Start a video by clicking the play button. If you enable the pen, the video frames will get traced by shapes. 
+      You can choose different shapes, switch between colors and flip the video horizontally. You can clear the drawboard by clicking on the screen.
+      The size of the current shape changes if you move the mouse (or on mobile touch and move) horizontally. 
+      <br/><br />
+      You can toggle the toolbar by pressing space.
+    </h1>
+    </div> 
+    <div class="uiContainer">
+      <img class="uiElement toggleVideo" src="img/play.png">
+      <img class="uiElement toggleRealVideo" src="img/camera.png">
+      <img class="uiElement toggleSound" src="img/volume-high.png">
+    	<img class="arrows uiElement leftArrow" src="img/arrowLeft.png">
+      <img class="arrows uiElement rightArrow" src="img/arrow.png">
+      <hr />
+      <img class="uiElement toggleDrawing" src="img/pencil-off.png">
+      <img class="uiElement drawElement colorButton" src="img/color.png">
+    	<img class="uiElement drawElement flipVideo" src="img/invert_pixels.png">
+    	<img class="uiElement drawElement changeForm" src="img/forms.png">	
+      <hr />
+      <img class="uiElement toggleHelp" src="img/help-circle.png">
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/p5.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <script src="js/p5.dom.js"></script>
+  <script src="js/sketch.js"></script>
+</body>
+</html>
