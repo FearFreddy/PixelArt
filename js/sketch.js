@@ -18,10 +18,9 @@ function preload() {
 	video[1] = createVideo('video/moderat.mp4');
 	video[2] = createVideo('video/birds.mp4');
 	video[3] = createVideo('video/cityNight.mp4');
-	video[4] = createVideo('video/Binkbeats.mp4');
-	video[5] = createVideo('video/lava.mp4');
-	video[6] = createVideo('video/fireworks.mp4');
-} 
+	video[4] = createVideo('video/earthNight.mp4');
+	video[5] = createVideo('video/okGo.mp4');
+}
 
 function setup() {
 	canvas = createCanvas(window.innerWidth, window.innerHeight);
@@ -71,7 +70,7 @@ function nextOrPrevVideo(next) {
 		if(currVideo == video.length -1) {
 			currVideo = 0;
 		} else currVideo++;
-	}	
+	}
 
 	video[currVideo].show();
 	video[currVideo].position(0,0);
@@ -83,7 +82,7 @@ function nextOrPrevVideo(next) {
 $(window).on('keyup', function(e) {
 	if(e.keyCode === 32) {
 		if($('.uiContainer').css("opacity") === "0") {
-			$('.uiContainer').css({ opacity: 1})		
+			$('.uiContainer').css({ opacity: 1})
 		} else {
 			$('.uiContainer').css({ opacity: 0})
 		}
@@ -136,7 +135,7 @@ $('.toggleRealVideo').on('click', function() {
 	if(realVideoDisplayed) {
 		$(this).attr("src", "img/camera-off.png");
 		video[currVideo].style('opacity', 0);
-	} else { 
+	} else {
 		$(this).attr("src", "img/camera.png");
 		video[currVideo].style('opacity', 1);
 	}
@@ -148,9 +147,9 @@ $('.toggleSound').on('click', function() {
 	if(videoVolume === 1) {
 		$(this).attr("src", "img/volume-off.png");
 		video[currVideo].volume(0);
-	} else { 
+	} else {
 		$(this).attr("src", "img/volume-high.png");
-		video[currVideo].volume(1); 
+		video[currVideo].volume(1);
 	}
 	videoVolume = Math.abs(videoVolume - 1)
 });
@@ -191,10 +190,10 @@ function drawPixels() {
   	noStroke();
   	let whichForm = null;
 	switch(currentDrawingForm) {
-		case 0: 
+		case 0:
 			whichForm = (randX, randY, x, y, i) => triangle(x + randX,y + randY,x +stepSize +randX, y+stepSize +randY, x + randX, y+ stepSize +randY);
 			break;
-		case 1: 
+		case 1:
 			whichForm = (randX, randY, x, y, i) => ellipse(x + randX, y + randY, stepSize, stepSize);
 			break;
 		case 2:
@@ -205,7 +204,7 @@ function drawPixels() {
 				} else {
 					stroke(video[currVideo].pixels[i*4 + 2],video[currVideo].pixels[i*4 + 1], video[currVideo].pixels[i*4], round(constrain(mouseY / 10, 15, 100)));
 				}
-				line(x + randX, y + randY, x + randX + stepSize, y + randY + stepSize);					
+				line(x + randX, y + randY, x + randX + stepSize, y + randY + stepSize);
 			}
 			break;
 		default:
@@ -240,7 +239,7 @@ function drawPixels() {
       			//DRAWING FORM
       			let randomX = random(-7,7);
       			let randomY = random(-7,7);
-      			whichForm(randomX, randomY, x, y, i);		
+      			whichForm(randomX, randomY, x, y, i);
     		}
   		}
   	}
